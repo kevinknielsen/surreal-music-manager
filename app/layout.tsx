@@ -9,8 +9,19 @@ import { SessionProvider } from 'next-auth/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'AI Assistant - Music Tools Demo',
-  description: 'AI assistant with music licensing and document creation capabilities.',
+  title: 'Story Protocol Music IP Manager - Blockchain-Based Music Licensing',
+  description: 'Transform your music into blockchain-based IP Assets with Story Protocol. Automated royalty distribution, on-chain licensing, and global rights management for musicians.',
+  keywords: ['Story Protocol', 'Music IP', 'Blockchain', 'Licensing', 'Royalties', 'NFT', 'IP Assets', 'Music Rights'],
+  openGraph: {
+    title: 'Story Protocol Music IP Manager',
+    description: 'Revolutionize your music IP management with blockchain-based licensing and automated royalties.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Story Protocol Music IP Manager',
+    description: 'Blockchain-based music licensing with automated royalty distribution.',
+  },
 };
 
 export const viewport = {

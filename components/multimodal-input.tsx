@@ -265,7 +265,7 @@ function PureMultimodalInput({
       <Textarea
         data-testid="multimodal-input"
         ref={textareaRef}
-                      placeholder="Ask about music licensing, royalties, or documents..."
+                      placeholder="Register IP Assets on Story Protocol, track royalties, create licensing deals..."
         value={input}
         onChange={handleInput}
         className={cx(

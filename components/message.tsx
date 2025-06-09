@@ -19,6 +19,8 @@ import { MessageEditor } from './message-editor';
 import { DocumentPreview } from './document-preview';
 import { MessageReasoning } from './message-reasoning';
 import type { UseChatHelpers } from '@ai-sdk/react';
+import { SyncLicenseResult } from './sync-license-result';
+import { RoyaltiesCard } from './royalties-card';
 
 const PurePreviewMessage = ({
   chatId,
@@ -183,6 +185,18 @@ const PurePreviewMessage = ({
                           args={args}
                           isReadonly={isReadonly}
                         />
+                      ) : toolName === 'syncLicense' || toolName === 'createStoryProtocolLicenseTool' ? (
+                        <SyncLicenseResult
+                          trackName={args.trackName || 'Unknown Track'}
+                          artistName={args.artistName || 'Unknown Artist'}
+                          licenseType={args.licenseType}
+                          royaltyPercentage={args.royaltyPercentage}
+                          description={args.description}
+                        />
+                      ) : toolName === 'showRoyalties' ? (
+                        <RoyaltiesCard
+                          userAddress={args.userAddress}
+                        />
                       ) : null}
                     </div>
                   );
@@ -211,6 +225,18 @@ const PurePreviewMessage = ({
                           type="request-suggestions"
                           result={result}
                           isReadonly={isReadonly}
+                        />
+                      ) : toolName === 'syncLicense' || toolName === 'createStoryProtocolLicenseTool' ? (
+                        <SyncLicenseResult
+                          trackName={result.data?.trackName || 'Unknown Track'}
+                          artistName={result.data?.artistName || 'Unknown Artist'}
+                          licenseType={result.data?.licenseType}
+                          royaltyPercentage={result.data?.royaltyPercentage}
+                          description={result.data?.description}
+                        />
+                      ) : toolName === 'showRoyalties' ? (
+                        <RoyaltiesCard
+                          userAddress={result.userAddress}
                         />
                       ) : (
                         <pre>{JSON.stringify(result, null, 2)}</pre>

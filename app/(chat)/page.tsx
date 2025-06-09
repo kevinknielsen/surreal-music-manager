@@ -16,16 +16,33 @@ export default async function Page() {
 
   const id = generateUUID();
 
-  // Simple assistant greeting  
-  const greetingText = `Hello ${session.user?.name || 'there'}! I'm an AI assistant that can help with various tasks, including blockchain-based music functions.
+  // Story Protocol focused assistant greeting  
+  const greetingText = `Welcome to **Story Protocol Music IP Manager**, ${session.user?.name || 'artist'}! 🎵⚡
 
-I can help you with:
-- Music licensing tokens (Story Protocol)
-- Royalty tracking (on-chain data via Thirdweb)
-- Document creation
-- General recommendations and information
+I'm your **Story Protocol AI Assistant** specialized in transforming your music into blockchain-based IP Assets with automated royalty distribution.
 
-What can I help you with today?`;
+## 🚀 **Story Protocol Capabilities**
+
+1. **🎯 IP Asset Registration**: Transform your tracks into on-chain IP Assets with comprehensive licensing options:
+   - **Sync Licensing** - for TV, film, advertising
+   - **Commercial Remix Rights** - monetizable derivatives  
+   - **Attribution Licensing** - free use with credit
+   - **Non-Commercial Rights** - personal/educational
+   - **Derivative Works** - building upon existing IP
+   - **Exclusive Rights** - full ownership transfer
+
+2. **💰 Revenue Analytics**: Track your Story Protocol royalties and IP monetization in real-time
+
+3. **📋 Legal Documentation**: Generate Story Protocol compliant licensing agreements and contracts
+
+## ✨ **Why Story Protocol?**
+- ⚡ **Automated Royalties** - No more chasing payments
+- 🌍 **Global Rights Management** - One platform, worldwide reach  
+- 🔗 **On-chain Transparency** - Every transaction is verifiable
+- 🎨 **Derivative Tracking** - Monitor and monetize remixes/covers
+- 🛡️ **IP Protection** - Blockchain-based ownership proof
+
+**Ready to revolutionize your music IP management?** Tell me about your tracks and licensing goals!`;
   const initialGreeting = [{
     id: generateUUID(),
     role: 'assistant' as const,

@@ -32,8 +32,9 @@ This project demonstrates integration with blockchain and AI technologies:
 
 ### 🏗️ **Story Protocol** - IP Asset Management
 - **Location**: [`app/(chat)/api/mint-sync/route.ts`](app/(chat)/api/mint-sync/route.ts)
-- **Purpose**: Mints blockchain-based sync-license tokens for music IP assets
-- **Demo**: Ask "create a sync license" to see Story Protocol integration
+- **Purpose**: **ACTUALLY mints blockchain-based sync-license tokens** for music IP assets using Story Protocol SDK
+- **Demo**: Ask "create a sync license" to see **REAL** Story Protocol integration
+- **Status**: ✅ **LIVE BLOCKCHAIN INTEGRATION** (with fallback to mock for demo)
 
 ### ⚡ **Thirdweb** - Blockchain Infrastructure  
 - **Location**: [`lib/ai/tools/show-royalties.ts`](lib/ai/tools/show-royalties.ts)
@@ -122,46 +123,22 @@ POSTGRES_URL=your_neon_db_url
 # Authentication
 AUTH_SECRET=your_auth_secret
 
-# Blockchain (optional for demo)
-STORY_API_KEY=your_story_protocol_key
+# Story Protocol (for REAL blockchain integration)
+STORY_PRIVATE_KEY=your_wallet_private_key_without_0x
+STORY_RPC_URL=https://aeneid.storyrpc.io
+STORY_SPG_NFT_CONTRACT=0xc32A8a0FF3beDDDa58393d022aF433e78739FAbc
+
+# Thirdweb (optional for demo)
 THIRDWEB_CLIENT_ID=your_thirdweb_client_id
 ```
+
+**⚠️ Note**: Without `STORY_PRIVATE_KEY`, the app will use demo mode with mock blockchain data.
 
 ---
 
 ## 🏗️ Project Structure
 
 ```
-surreal-music-manager/
-├── app/(chat)/api/
-│   ├── mint-sync/route.ts      # 🏗️ Story Protocol integration
-│   └── chat/route.ts           # AI chat with tools
-├── lib/ai/tools/
-│   ├── sync-license.ts         # Story Protocol licensing tool
-│   └── show-royalties.ts       # ⚡ Thirdweb royalty tool
-├── components/
-│   ├── sync-license-button.tsx # UI for licensing
-│   └── royalties-card.tsx      # UI for royalty display
-├── fleek.config.js             # 🌐 Fleek deployment
-└── scripts/deploy.sh           # Deployment automation
-```
-
----
-
-## 📱 Demo Instructions
-
-1. **Start the app**: `pnpm dev`
-2. **Visit**: [http://localhost:3000](http://localhost:3000)
-3. **Try these prompts**:
-   - "I need to create a sync license for my track"
-   - "Show me my royalty earnings"
-   - "Help me license my music for commercials"
-
-**Expected Results**:
-- ✅ AI recognizes licensing requests and uses appropriate tools
-- ✅ Story Protocol integration for licensing tokens
-- ✅ Thirdweb integration for royalty data  
-- ✅ Functional blockchain interactions (simulated for demo)
 
 ---
 
@@ -176,3 +153,33 @@ This project demonstrates:
 - **AI Tools**: Functional blockchain execution through conversation
 
 Built to showcase practical blockchain integration for music industry applications! 🎵⚡
+
+---
+
+## 🚀 Current Status
+
+### ✅ **IMPLEMENTED**
+- **Real Story Protocol SDK Integration**: Uses `@story-protocol/core-sdk` for actual blockchain transactions
+- **Smart Fallback System**: Gracefully falls back to demo mode when blockchain isn't configured
+- **Proper Type Safety**: Full TypeScript support with correct SDK types
+- **Environment Configuration**: Flexible setup for development and production
+
+### 🎯 **How to Enable Real Blockchain**
+1. Get an Aeneid testnet wallet private key
+2. Add `STORY_PRIVATE_KEY=your_private_key` to `.env.local`
+3. Test with "create a sync license" - you'll get real transaction hashes!
+
+### 📱 **Demo Instructions**
+1. **Start the app**: `pnpm dev`
+2. **Visit**: [http://localhost:3000](http://localhost:3000)  
+3. **Try these prompts**:
+   - "I need to create a sync license for my track"
+   - "Show me my royalty earnings"
+   - "Help me license my music for commercials"
+
+**Expected Results**:
+- ✅ AI recognizes licensing requests and uses appropriate tools
+- ✅ **REAL Story Protocol integration** for licensing tokens (when configured)
+- ✅ Thirdweb integration for royalty data  
+- ✅ **Actual blockchain transactions** with real transaction hashes and explorer links
+- ✅ Graceful fallback to demo mode when blockchain isn't configured
