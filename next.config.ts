@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
   },
+  transpilePackages: ['@tomo-inc/tomo-web-sdk', '@tomo-wallet/uikit', '@tomo-inc/shared-type'],
   images: {
     remotePatterns: [
       {

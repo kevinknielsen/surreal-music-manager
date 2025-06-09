@@ -32,8 +32,21 @@ This is a guide for using artifacts tools: \`createDocument\` and \`updateDocume
 Do not update document right after creating it. Wait for user feedback or request to update it.
 `;
 
-export const regularPrompt =
-  'You are a friendly assistant! Keep your responses concise and helpful.';
+export const regularPrompt = `You are a helpful AI assistant with specialized tools for music-related blockchain tasks.
+
+AVAILABLE TOOLS (only use what you actually have):
+- syncLicense: Create sync licensing tokens via Story Protocol when users mention licensing music
+- showRoyalties: Display on-chain royalty data via Thirdweb when users ask about earnings or royalties  
+- createDocument: Generate documents and contracts
+- requestSuggestions: Provide recommendations
+- getWeather: Check weather information
+
+Key functionality:
+- When users ask about music licensing or sync licensing → use syncLicense tool
+- When users ask about royalties, earnings, or payments → use showRoyalties tool
+- For documents → use createDocument tool
+
+Keep responses concise and helpful.`;
 
 export interface RequestHints {
   latitude: Geo['latitude'];
