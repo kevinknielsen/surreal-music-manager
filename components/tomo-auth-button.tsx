@@ -62,7 +62,7 @@ export function TomoWelcomeScreen() {
           <TomoAuthButton />
           
           <div className="text-sm text-muted-foreground">
-            <p>Meet Alex "Tracks" Johnson</p>
+            <p>Meet Alex &ldquo;Tracks&rdquo; Johnson</p>
             <p>Your Virtual Music Manager</p>
           </div>
         </div>

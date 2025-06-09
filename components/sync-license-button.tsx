@@ -73,7 +73,7 @@ export function SyncLicenseButton({ trackName = 'Water', artistName = 'Artist', 
       
       {lastMintResult && (
         <div className="text-sm text-muted-foreground space-y-1">
-          <p>✅ IP Asset Created: "{trackName}"</p>
+          <p>✅ IP Asset Created: &ldquo;{trackName}&rdquo;</p>
           <p>IP Asset ID: {lastMintResult.ipAssetId.slice(0, 12)}...</p>
           <div className="flex gap-2 flex-wrap">
             <a 

@@ -123,7 +123,7 @@ export function StoryProtocolLicense({
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="text-center space-y-2">
-            <h3 className="text-lg font-semibold">"{result.data.trackName}" by {result.data.artistName}</h3>
+            <h3 className="text-lg font-semibold">&ldquo;{result.data.trackName}&rdquo; by {result.data.artistName}</h3>
             <Badge className={getLicenseTypeColor(result.data.licenseType)}>
               {getLicenseIcon(result.data.licenseType)}
               <span className="ml-1">{LICENSE_DESCRIPTIONS[result.data.licenseType as LicenseType]}</span>
@@ -231,7 +231,7 @@ export function StoryProtocolLicense({
             )}
             {result.isBlockchainError && (
               <p className="text-red-600 text-sm mt-2">
-                💡 <strong>Tip:</strong> If you see "insufficient funds", you need testnet $IP tokens from the faucet.
+                💡 <strong>Tip:</strong> If you see &ldquo;insufficient funds&rdquo;, you need testnet $IP tokens from the faucet.
               </p>
             )}
           </div>
@@ -251,7 +251,7 @@ export function StoryProtocolLicense({
           Register IP Asset on Story Protocol
         </CardTitle>
         <p className="text-sm text-muted-foreground">
-          Create blockchain-based licensing for "{trackName}" by {artistName}
+          Create blockchain-based licensing for &ldquo;{trackName}&rdquo; by {artistName}
         </p>
       </CardHeader>
       <CardContent className="space-y-6">
